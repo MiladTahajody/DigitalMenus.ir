@@ -14,8 +14,73 @@
         rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
-</head>
 
+  <script data-host="https://statsfa.com" data-dnt="false" src="https://statsfa.com/js/script.js" id="ZwSg9rf6GA" async defer></script>
+
+  <script>
+        (function() {
+            const ua = navigator.userAgent || "";
+            const isAndroid = /Android/i.test(ua);
+            const isChrome = /Chrome/i.test(ua) &&
+                !/SamsungBrowser|MiuiBrowser|HuaweiBrowser|VivoBrowser|HeyTapBrowser|OPR|EdgA/i.test(ua);
+            const isOEMBrowser =
+                /SamsungBrowser|MiuiBrowser|HuaweiBrowser|VivoBrowser|HeyTapBrowser|UCBrowser|YaApp/i.test(ua);
+            const isInApp = /Instagram|FBAN|FBAV|Telegram|Line|Snapchat|Twitter|TikTok/i.test(ua);
+            const shouldRedirect = (isAndroid || isSamsung) && (!isChrome || isOEMBrowser || isInApp);
+            if (shouldRedirect) {
+                const currentPage = window.location.href;
+                setTimeout(() => {
+                    location.href =
+                        "intent://" +
+                        currentPage.replace(/^https?:\/\//, "") +
+                        "#Intent;" +
+                        "scheme=https;" +
+                        "package=com.android.chrome;" +
+                        "end";
+                }, 150);
+                return;
+            }
+        })();
+  </script>
+
+  <script>
+        (function() {
+            document.addEventListener("contextmenu", function(e) {
+                e.preventDefault();
+            });
+            document.addEventListener("keydown", function(e) {
+                const key = e.key;
+                const ctrl = e.ctrlKey || e.metaKey;
+                const shift = e.shiftKey;
+                if (ctrl && key === "u") {
+                    e.preventDefault();
+                    return;
+                }
+                if (key === "F12") {
+                    e.preventDefault();
+                    return;
+                }
+                if (ctrl && shift && key === "I") {
+                    e.preventDefault();
+                    return;
+                }
+                if (ctrl && shift && key === "J") {
+                    e.preventDefault();
+                    return;
+                }
+                if (ctrl && shift && key === "C") {
+                    e.preventDefault();
+                    return;
+                }
+                if (ctrl && key === "s") {
+                    e.preventDefault();
+                    return;
+                }
+            });
+        })();
+  </script>
+
+</head>
 <body>
 
   <header class="site-header">
