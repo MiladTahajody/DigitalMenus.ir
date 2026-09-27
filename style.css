@@ -22,8 +22,12 @@
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --header-h: 70px;
 
-  --hero-ratio: 96 / 1;
+  /* NOTE: --hero-ratio was used to size the hero banner photo.
+     The hero photo has been removed entirely (see .hero-banner
+     below) — only the decorative diagonal skew strip remains, so
+     this token is no longer needed. */
 
+  --hero-ratio: 64 /8;
   --skew: 5rem;
 }
 
@@ -119,22 +123,21 @@ html[lang="fa"] .lang-en { display: none !important; }
   margin-bottom: calc(-2 * var(--skew));
 }
 
+/* --------------------------------------------------------------
+   HERO — the photo has been removed entirely (client no longer
+   wants a hero image). .hero-banner is now ONLY the decorative
+   dark diagonal strip: its height comes purely from padding-bottom
+   (equal to --skew), and .hero-section's clip-path above cuts it
+   into the angled shape. Nothing else needed — do not add a fixed
+   height or background-image back here unless a hero photo is
+   reintroduced on purpose.
+------------------------------------------------------------- */
 .hero-banner {
   position: relative;
   width: 100%;
   padding-bottom: var(--skew);
-  background: #0E0C0A;
-}
-
-.hero-banner-photo {
-  width: 100%;
   aspect-ratio: var(--hero-ratio);
-  overflow: hidden;
-  background-image: url('heroimage.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #0E0C0A;
+  background: #0E0C0A;
 }
 
 .menus-wrap {

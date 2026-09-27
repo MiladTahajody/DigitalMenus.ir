@@ -7,7 +7,12 @@ const allProjects = [
     descFa:  '● شش مدل استایل رنگی</br>● ناوبری آسان و سریع</br>● مدل متنی ساده و عکس دار</br>● قابلیت پشتیبانی از چند زبانه</br>● امکان انتخاب تعاملی آیتم های منو',
     menuUrl:  'https://digitalmenus.ir/Neon/',
     logoSrc:  'logo/Neon Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/-CP3qaPO0Js?autoplay=0&mute=1'
+    videoSrc: 'https://www.youtube.com/embed/-CP3qaPO0Js?autoplay=0&mute=1',
+    /* ★ REPLACE APARAT_ID_1 with this project's real Aparat embed
+       link (from Aparat's own "Share → Embed" panel under the
+       video). Shown instead of YouTube for visitors whose IP
+       resolves to Iran — see detectRegionAndSwapVideos() below. */
+    videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/szsfx7u/vt/frame?titleShow=true'
   },
   {
     nameEn:  'Aroma',
@@ -16,7 +21,8 @@ const allProjects = [
     descFa:  '● شش مدل استایل لاکچری</br>● ناوبری دو حالته ترکیبی</br>● آیتمهای متنی ساده و عکس دار</br>● پشتیبانی از حالت چند زبانه</br>● انتخاب تعاملی آیتم های داخل منو',
     menuUrl:  'https://digitalmenus.ir/Aroma/',
     logoSrc:  'logo/Aroma Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/iClq5V2MxEg?autoplay=0&mute=1'
+    videoSrc: 'https://www.youtube.com/embed/iClq5V2MxEg?autoplay=0&mute=1',
+    videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/rejl746/vt/frame?titleShow=true'
   },
   {
     nameEn:  'Venus',
@@ -25,7 +31,8 @@ const allProjects = [
     descFa:  '● پنج مدل استایل خاص</br>● قابلیت چند زبانه بودن</br>● ناوبری سریع بین دسته ها</br>● مدل متنی ساده و عکس دار</br>● انتخاب تعاملی آیتم های داخل منو</br>● امکان اسکرول بصورت افقی و عمودی',
     menuUrl:  'https://digitalmenus.ir/Venus/',
     logoSrc:  'logo/Venus Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/a74OjP9Ug4A?autoplay=0&mute=1'
+    videoSrc: 'https://www.youtube.com/embed/a74OjP9Ug4A?autoplay=0&mute=1',
+    videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/nmf291v/vt/frame?titleShow=true'
   },
   {
     nameEn:  'Luma',
@@ -34,7 +41,8 @@ const allProjects = [
     descFa:  '● استایل خاص</br>● دو زبانه همزمان</br>● مدل متنی ساده</br>● ناوبری آسانسوری</br>● امکان افزودن جزئیات بیشتر',
     menuUrl:  'https://digitalmenus.ir/Luma',
     logoSrc:  'logo/Luma Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/gW9keRaXP2U?autoplay=0&mute=1'
+    videoSrc: 'https://www.youtube.com/embed/gW9keRaXP2U?autoplay=0&mute=1',
+    videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/dav8b78/vt/frame?titleShow=true'
   },
   {
     nameEn:  'Dark Zone',
@@ -43,7 +51,8 @@ const allProjects = [
     descFa:  '● استایل خاص</br>● چند زبانه</br>● ناوبری سریع</br>● تم تیره و روشن</br>● مدل متنی ساده و عکس دار</br>● انتخاب تعاملی آیتم های داخل منو',
     menuUrl:  'https://digitalmenus.ir/DarkZone/',
     logoSrc:  'logo/DarkZone Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/BkCnvu3krHY?autoplay=0&mute=1'
+    videoSrc: 'https://www.youtube.com/embed/BkCnvu3krHY?autoplay=0&mute=1',
+    videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/sws2s63/vt/frame?titleShow=true'
   },
   {
     nameEn:  'Dream',
@@ -52,7 +61,8 @@ const allProjects = [
     descFa:  '● استایل خاص</br>● دو یا تک زبانه</br>● ناوبری صفحه ای</br>● مدل متنی ساده</br>● امکان افزودن جزئیات بیشتر',
     menuUrl:  'https://digitalmenus.ir/Dream/',
     logoSrc:  'logo/Dream Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/vLtDetYh0os?autoplay=0&mute=1'
+    videoSrc: 'https://www.youtube.com/embed/vLtDetYh0os?autoplay=0&mute=1',
+    videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/fwab923/vt/frame?titleShow=true'
   },
   {
     nameEn:  'Honey',
@@ -61,7 +71,8 @@ const allProjects = [
     descFa:  '● استایل خاص</br>● چند زبانه</br>● ناوبری سریع</br>● تم تیره و روشن</br>● متنی ساده یا عکس دار</br>● انتخاب تعاملی آیتم های داخل منو',
     menuUrl:  'https://digitalmenus.ir/Honey/',
     logoSrc:  'logo/Honey Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/GhiIZZyk1Vg?autoplay=0&mute=1'
+    videoSrc: 'https://www.youtube.com/embed/GhiIZZyk1Vg?autoplay=0&mute=1',
+    videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/hif74u9/vt/frame?titleShow=true'
   }
 ];
 
@@ -73,6 +84,46 @@ const menuSection = {
   descFa:   'مجموعه‌ای متفاوت و متنوع از منوهای دیجیتال لاکچری و قابل اسکن برای کافه‌ ، رستوران , فست فود و بیکری.',
   projects: allProjects
 };
+
+/* ================================================================
+   REGION DETECTION — Iran → Aparat, everywhere else → YouTube
+   ----------------------------------------------------------------
+   Default is always YouTube (already the src every card is built
+   with below). There is no server here, so the only way to know a
+   visitor's country from a static site is to ask a third-party
+   IP-geolocation API from the browser — this uses ipwho.is (free,
+   no API key, HTTPS, CORS-enabled).
+
+   Timing: cards are built immediately with the YouTube src, so the
+   page never waits on this network call — it only swaps the src of
+   the iframes AFTER this lookup resolves.
+
+   Fails safe: if the lookup fails for any reason (network error,
+   ad-blocker, the API being down, or its ~1,000 requests/day free
+   limit being hit for the day), isIran stays false and everyone
+   just keeps seeing YouTube — nothing breaks.
+   ================================================================ */
+let isIran = false;
+
+async function detectRegionAndSwapVideos() {
+  try {
+    const res  = await fetch('https://ipwho.is/');
+    const data = await res.json();
+    isIran = !!(data && data.success !== false && data.country_code === 'IR');
+  } catch (e) {
+    isIran = false; // network error / blocked request → fail safe to YouTube
+  }
+
+  if (!isIran) return; // default src is already YouTube, nothing to swap
+
+  document.querySelectorAll('iframe[data-video-aparat]').forEach(iframe => {
+    const aparatSrc = iframe.dataset.videoAparat;
+    if (aparatSrc) {
+      iframe.src = aparatSrc;
+      iframe.dataset.baseSrc = aparatSrc; // keep the "paused" reference in sync — see the video-play script below
+    }
+  });
+}
 
 (function initLanguageSwitch() {
   const root    = document.documentElement;
@@ -134,6 +185,10 @@ const menuSection = {
   sec.appendChild(grid);
   wrap.appendChild(sec);
   container.appendChild(wrap);
+
+  /* Every card (and its iframe) now exists in the DOM — safe to
+     kick off the region check that may swap some of them to Aparat. */
+  detectRegionAndSwapVideos();
 })();
 
 function buildProjectCard(proj, pIdx) {
@@ -196,12 +251,26 @@ function buildProjectCard(proj, pIdx) {
 
   gallery.appendChild(logoItem);
 
+  /* ── Video item ──────────────────────────────────────────────
+     - src               : starts as YouTube (the default for everyone).
+     - data-video-aparat : Aparat URL, used by detectRegionAndSwapVideos()
+                           above to swap this iframe for Iranian visitors.
+     - data-base-src     : always holds whichever URL is the CURRENT
+                           non-autoplaying version (YouTube, or Aparat
+                           once swapped) — the play/pause script below
+                           uses this to stop a video by reloading the
+                           iframe back to it.
+     autoplay is never on at build time (proj.videoSrc always has
+     autoplay=0), and the iframe has pointer-events:none in CSS —
+     so nothing plays until the visitor clicks the play button. */
   const videoItem = document.createElement('div');
   videoItem.className = 'gallery-item';
   videoItem.dataset.type = 'video';
   videoItem.innerHTML = `
     <div class="gallery-video-wrap">
       <iframe src="${proj.videoSrc}"
+              data-video-aparat="${proj.videoSrcAparat}"
+              data-base-src="${proj.videoSrc}"
               title="Preview video — ${proj.nameEn}"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
               allowfullscreen loading="lazy"></iframe>
@@ -218,18 +287,62 @@ function buildProjectCard(proj, pIdx) {
   return card;
 }
 
+/* ================================================================
+   VIDEO PLAY / PAUSE — only ONE video may play at a time
+   ----------------------------------------------------------------
+   Nothing autoplays on page load — every iframe starts with
+   autoplay=0/pointer-events:none, and only becomes interactive once
+   its own play button is clicked/tapped.
+
+   YouTube/Aparat are cross-origin iframes, so there's no direct
+   pause() call available. The reliable way to stop a video that's
+   already playing is to reload its iframe back to its own
+   data-base-src (the non-autoplaying URL) — this immediately stops
+   playback and restores that card's play-button overlay.
+
+   `currentlyPlaying` remembers the one video card that's currently
+   live. Clicking a different card's play button first pauses
+   whatever was playing, THEN starts the new one — so at most one
+   video is ever playing across the whole page, even if the visitor
+   forgets to pause the first one themselves.
+   ================================================================ */
 (function initVideoPlay() {
+  let currentlyPlaying = null; // the .gallery-item[data-type="video"] currently playing, if any
+
+  function pauseVideo(videoItem) {
+    const iframe  = videoItem.querySelector('iframe');
+    const playBtn = videoItem.querySelector('.video-play-btn');
+    if (iframe) {
+      iframe.style.pointerEvents = 'none';
+      iframe.src = iframe.dataset.baseSrc; // reload without autoplay = stops playback
+    }
+    if (playBtn) playBtn.style.display = 'flex';
+  }
+
   document.addEventListener('click', e => {
     const pb = e.target.closest('.video-play-btn');
     if (!pb) return;
-    pb.style.display = 'none';
+
+    const videoItem = pb.closest('.gallery-item');
     const iframe = pb.previousElementSibling.querySelector('iframe');
-    if (iframe) {
-      iframe.style.pointerEvents = 'auto';
-      iframe.src = iframe.src.includes('?')
-        ? iframe.src.replace('autoplay=0', 'autoplay=1')
-        : iframe.src + '?autoplay=1';
+    if (!iframe) return;
+
+    /* Stop whatever else was playing before starting this one */
+    if (currentlyPlaying && currentlyPlaying !== videoItem) {
+      pauseVideo(currentlyPlaying);
     }
+
+    pb.style.display = 'none';
+    iframe.style.pointerEvents = 'auto';
+    if (iframe.src.includes('autoplay=0')) {
+      iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1'); // YouTube
+    } else if (iframe.src.includes('?')) {
+      iframe.src += '&autoplay=1'; // Aparat / any URL that already has a query string
+    } else {
+      iframe.src += '?autoplay=1';
+    }
+
+    currentlyPlaying = videoItem;
   });
 })();
 
