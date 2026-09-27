@@ -223,12 +223,8 @@ html[lang="fa"] .lang-en { display: none !important; }
 .logo-placeholder-frame svg { opacity: 0.4; }
 .logo-placeholder-text { font-size: 0.75rem; color: var(--clr-sub); }
 
-.gallery-video-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
-.gallery-video-wrap iframe { width: 100%; height: 100%; border: none; pointer-events: none; background: #000; }
-
-/* Aparat cards: no custom overlay — the visitor uses Aparat's own
-   play button directly (see detectRegionAndSwapVideos() in app.js). */
-.gallery-item.video-native .video-play-btn { display: none; }
+.gallery-video-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.gallery-video-wrap iframe { width: 100%; height: 100%; border: none; pointer-events: none; }
 .video-play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.32); cursor: pointer; transition: var(--transition); }
 .video-play-btn:hover { background: rgba(75, 81, 94, 0.4); }
 .video-play-btn svg { filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }
