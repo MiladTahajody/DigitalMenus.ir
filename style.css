@@ -22,7 +22,12 @@
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --header-h: 70px;
 
-  --hero-ratio: 64/8;
+  /* NOTE: --hero-ratio was used to size the hero banner photo.
+     The hero photo has been removed entirely (see .hero-banner
+     below) — only the decorative diagonal skew strip remains, so
+     this token is no longer needed. */
+
+  --hero-ratio: 16/1;
   --skew: 5rem;
 }
 
@@ -118,11 +123,20 @@ html[lang="fa"] .lang-en { display: none !important; }
   margin-bottom: calc(-2 * var(--skew));
 }
 
+/* --------------------------------------------------------------
+   HERO — the photo has been removed entirely (client no longer
+   wants a hero image). .hero-banner is now ONLY the decorative
+   dark diagonal strip: its height comes purely from padding-bottom
+   (equal to --skew), and .hero-section's clip-path above cuts it
+   into the angled shape. Nothing else needed — do not add a fixed
+   height or background-image back here unless a hero photo is
+   reintroduced on purpose.
+------------------------------------------------------------- */
 .hero-banner {
   position: relative;
   width: 100%;
-  padding-bottom: var(--skew);
   aspect-ratio: var(--hero-ratio);
+  padding-bottom: var(--skew);
   background: #0E0C0A;
 }
 
@@ -209,8 +223,12 @@ html[lang="fa"] .lang-en { display: none !important; }
 .logo-placeholder-frame svg { opacity: 0.4; }
 .logo-placeholder-text { font-size: 0.75rem; color: var(--clr-sub); }
 
-.gallery-video-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; }
-.gallery-video-wrap iframe { width: 100%; height: 100%; border: none; pointer-events: none; }
+.gallery-video-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
+.gallery-video-wrap iframe { width: 100%; height: 100%; border: none; pointer-events: none; background: #000; }
+
+/* Aparat cards: no custom overlay — the visitor uses Aparat's own
+   play button directly (see detectRegionAndSwapVideos() in app.js). */
+.gallery-item.video-native .video-play-btn { display: none; }
 .video-play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.32); cursor: pointer; transition: var(--transition); }
 .video-play-btn:hover { background: rgba(75, 81, 94, 0.4); }
 .video-play-btn svg { filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }
@@ -265,6 +283,7 @@ html[lang="fa"] .lang-en { display: none !important; }
 
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.visible { opacity: 1; transform: none; }
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; }
 }
