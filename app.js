@@ -8,10 +8,6 @@ const allProjects = [
     menuUrl:  'https://digitalmenus.ir/Neon/',
     logoSrc:  'logo/Neon Logo.svg',
     videoSrc: 'https://www.youtube.com/embed/-CP3qaPO0Js?autoplay=0&cc_load_policy=0&controls=1&playsinline=1',
-    /* ★ REPLACE APARAT_ID_1 with this project's real Aparat embed
-       link (from Aparat's own "Share → Embed" panel under the
-       video). Shown instead of YouTube for visitors whose IP
-       resolves to Iran — see detectRegionAndSwapVideos() below. */
     videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/szsfx7u/vt/frame?titleShow=false'
   },
   {
@@ -85,24 +81,6 @@ const menuSection = {
   projects: allProjects
 };
 
-/* ================================================================
-   REGION DETECTION — Iran → Aparat, everywhere else → YouTube
-   ----------------------------------------------------------------
-   Default is always YouTube (already the src every card is built
-   with below). There is no server here, so the only way to know a
-   visitor's country from a static site is to ask a third-party
-   IP-geolocation API from the browser — this uses ipwho.is (free,
-   no API key, HTTPS, CORS-enabled).
-
-   Timing: cards are built immediately with the YouTube src, so the
-   page never waits on this network call — it only swaps the src of
-   the iframes AFTER this lookup resolves.
-
-   Fails safe: if the lookup fails for any reason (network error,
-   ad-blocker, the API being down, or its ~1,000 requests/day free
-   limit being hit for the day), isIran stays false and everyone
-   just keeps seeing YouTube — nothing breaks.
-   ================================================================ */
 let isIran = false;
 
 async function detectRegionAndSwapVideos() {
@@ -111,28 +89,17 @@ async function detectRegionAndSwapVideos() {
     const data = await res.json();
     isIran = !!(data && data.success !== false && data.country_code === 'IR');
   } catch (e) {
-    isIran = false; // network error / blocked request → fail safe to YouTube
+    isIran = false;
   }
 
-  if (!isIran) return; // default src is already YouTube, nothing to swap
+  if (!isIran) return;
 
   document.querySelectorAll('iframe[data-video-aparat]').forEach(iframe => {
     const aparatSrc = iframe.dataset.videoAparat;
     if (aparatSrc) {
       iframe.src = aparatSrc;
-      iframe.dataset.baseSrc = aparatSrc; // keep the "paused" reference in sync — see the video-play script below
+      iframe.dataset.baseSrc = aparatSrc;
 
-      /* Aparat's own embed does not reliably start playback from a URL
-         autoplay parameter the way YouTube's does — its player still
-         waits for a click on ITS OWN poster/play button regardless of
-         the query string. Layering our custom overlay on top of that
-         just means the visitor has to click twice (ours, then theirs).
-         So for Aparat cards we skip our overlay entirely and let the
-         visitor interact with Aparat's native play button directly —
-         that's a single click, matching the YouTube cards' single click,
-         even though the two aren't triggered the same way under the
-         hood. See initVideoPlay() below for the matching native-focus
-         handling that keeps "only one video plays at a time" working. */
       const videoItem = iframe.closest('.gallery-item');
       if (videoItem) {
         videoItem.classList.add('video-native');
@@ -204,8 +171,6 @@ async function detectRegionAndSwapVideos() {
   wrap.appendChild(sec);
   container.appendChild(wrap);
 
-  /* Every card (and its iframe) now exists in the DOM — safe to
-     kick off the region check that may swap some of them to Aparat. */
   detectRegionAndSwapVideos();
 })();
 
@@ -269,18 +234,6 @@ function buildProjectCard(proj, pIdx) {
 
   gallery.appendChild(logoItem);
 
-  /* ── Video item ──────────────────────────────────────────────
-     - src               : starts as YouTube (the default for everyone).
-     - data-video-aparat : Aparat URL, used by detectRegionAndSwapVideos()
-                           above to swap this iframe for Iranian visitors.
-     - data-base-src     : always holds whichever URL is the CURRENT
-                           non-autoplaying version (YouTube, or Aparat
-                           once swapped) — the play/pause script below
-                           uses this to stop a video by reloading the
-                           iframe back to it.
-     autoplay is never on at build time (proj.videoSrc always has
-     autoplay=0), and the iframe has pointer-events:none in CSS —
-     so nothing plays until the visitor clicks the play button. */
   const videoItem = document.createElement('div');
   videoItem.className = 'gallery-item';
   videoItem.dataset.type = 'video';
@@ -305,35 +258,16 @@ function buildProjectCard(proj, pIdx) {
   return card;
 }
 
-/* ================================================================
-   VIDEO PLAY / PAUSE — only ONE video may play at a time
-   ----------------------------------------------------------------
-   Nothing autoplays on page load — every iframe starts with
-   autoplay=0/pointer-events:none, and only becomes interactive once
-   its own play button is clicked/tapped.
-
-   YouTube/Aparat are cross-origin iframes, so there's no direct
-   pause() call available. The reliable way to stop a video that's
-   already playing is to reload its iframe back to its own
-   data-base-src (the non-autoplaying URL) — this immediately stops
-   playback and restores that card's play-button overlay.
-
-   `currentlyPlaying` remembers the one video card that's currently
-   live. Clicking a different card's play button first pauses
-   whatever was playing, THEN starts the new one — so at most one
-   video is ever playing across the whole page, even if the visitor
-   forgets to pause the first one themselves.
-   ================================================================ */
 (function initVideoPlay() {
-  let currentlyPlaying = null; // the .gallery-item[data-type="video"] currently playing, if any
+  let currentlyPlaying = null;
 
   function pauseVideo(videoItem) {
     const iframe  = videoItem.querySelector('iframe');
     const playBtn = videoItem.querySelector('.video-play-btn');
-    const native  = iframe && iframe.dataset.native === 'true'; // Aparat card: no overlay, iframe stays clickable
+    const native  = iframe && iframe.dataset.native === 'true';
     if (iframe) {
       if (!native) iframe.style.pointerEvents = 'none';
-      iframe.src = iframe.dataset.baseSrc; // reload without autoplay = stops playback
+      iframe.src = iframe.dataset.baseSrc;
     }
     if (playBtn && !native) playBtn.style.display = 'flex';
   }
@@ -346,7 +280,6 @@ function buildProjectCard(proj, pIdx) {
     const iframe = pb.previousElementSibling.querySelector('iframe');
     if (!iframe) return;
 
-    /* Stop whatever else was playing before starting this one */
     if (currentlyPlaying && currentlyPlaying !== videoItem) {
       pauseVideo(currentlyPlaying);
     }
@@ -354,9 +287,9 @@ function buildProjectCard(proj, pIdx) {
     pb.style.display = 'none';
     iframe.style.pointerEvents = 'auto';
     if (iframe.src.includes('autoplay=0')) {
-      iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1'); // YouTube
+      iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
     } else if (iframe.src.includes('?')) {
-      iframe.src += '&autoplay=1'; // Aparat / any URL that already has a query string
+      iframe.src += '&autoplay=1';
     } else {
       iframe.src += '?autoplay=1';
     }
@@ -364,19 +297,6 @@ function buildProjectCard(proj, pIdx) {
     currentlyPlaying = videoItem;
   });
 
-  /* Aparat cards (see detectRegionAndSwapVideos above) have no overlay
-     button to click, so the delegate above never fires for them — the
-     visitor clicks straight into the iframe. We can't see clicks inside
-     a cross-origin iframe, but we CAN see which iframe holds focus:
-     it moves into the iframe the moment the visitor interacts with
-     Aparat's own player.
-
-     A one-off window 'blur' listener is NOT enough: the parent window
-     only blurs the first time focus enters any iframe, so it never
-     fires again when focus jumps from one Aparat iframe to another.
-     Instead we watch document.activeElement on a light interval —
-     whenever it becomes a different Aparat iframe than the one we
-     think is playing, that one is stopped and the new one takes over. */
   setInterval(() => {
     const active = document.activeElement;
     if (!active || active.tagName !== 'IFRAME' || active.dataset.native !== 'true') return;
