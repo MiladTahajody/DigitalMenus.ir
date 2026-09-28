@@ -7,7 +7,7 @@ const allProjects = [
     descFa:  '● شش مدل استایل رنگی</br>● ناوبری آسان و سریع</br>● مدل متنی ساده و عکس دار</br>● قابلیت پشتیبانی از چند زبانه</br>● امکان انتخاب تعاملی آیتم های منو',
     menuUrl:  'https://digitalmenus.ir/Neon/',
     logoSrc:  'logo/Neon Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/-CP3qaPO0Js?autoplay=0&mute=1&cc_load_policy=0',
+    videoSrc: 'https://www.youtube.com/embed/-CP3qaPO0Js?autoplay=0&cc_load_policy=0',
     /* ★ REPLACE APARAT_ID_1 with this project's real Aparat embed
        link (from Aparat's own "Share → Embed" panel under the
        video). Shown instead of YouTube for visitors whose IP
@@ -21,7 +21,7 @@ const allProjects = [
     descFa:  '● شش مدل استایل لاکچری</br>● ناوبری دو حالته ترکیبی</br>● آیتمهای متنی ساده و عکس دار</br>● پشتیبانی از حالت چند زبانه</br>● انتخاب تعاملی آیتم های داخل منو',
     menuUrl:  'https://digitalmenus.ir/Aroma/',
     logoSrc:  'logo/Aroma Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/iClq5V2MxEg?autoplay=0&mute=1&cc_load_policy=0',
+    videoSrc: 'https://www.youtube.com/embed/iClq5V2MxEg?autoplay=0&cc_load_policy=0',
     videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/rejl746/vt/frame?titleShow=false'
   },
   {
@@ -31,7 +31,7 @@ const allProjects = [
     descFa:  '● پنج مدل استایل خاص</br>● قابلیت چند زبانه بودن</br>● ناوبری سریع بین دسته ها</br>● مدل متنی ساده و عکس دار</br>● انتخاب تعاملی آیتم های داخل منو</br>● امکان اسکرول بصورت افقی و عمودی',
     menuUrl:  'https://digitalmenus.ir/Venus/',
     logoSrc:  'logo/Venus Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/a74OjP9Ug4A?autoplay=0&mute=1&cc_load_policy=0',
+    videoSrc: 'https://www.youtube.com/embed/a74OjP9Ug4A?autoplay=0&cc_load_policy=0',
     videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/nmf291v/vt/frame?titleShow=false'
   },
   {
@@ -41,7 +41,7 @@ const allProjects = [
     descFa:  '● استایل خاص</br>● دو زبانه همزمان</br>● مدل متنی ساده</br>● ناوبری آسانسوری</br>● امکان افزودن جزئیات بیشتر',
     menuUrl:  'https://digitalmenus.ir/Luma',
     logoSrc:  'logo/Luma Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/gW9keRaXP2U?autoplay=0&mute=1&cc_load_policy=0',
+    videoSrc: 'https://www.youtube.com/embed/gW9keRaXP2U?autoplay=0&cc_load_policy=0',
     videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/dav8b78/vt/frame?titleShow=false'
   },
   {
@@ -51,7 +51,7 @@ const allProjects = [
     descFa:  '● استایل خاص</br>● چند زبانه</br>● ناوبری سریع</br>● تم تیره و روشن</br>● مدل متنی ساده و عکس دار</br>● انتخاب تعاملی آیتم های داخل منو',
     menuUrl:  'https://digitalmenus.ir/DarkZone/',
     logoSrc:  'logo/DarkZone Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/BkCnvu3krHY?autoplay=0&mute=1&cc_load_policy=0',
+    videoSrc: 'https://www.youtube.com/embed/BkCnvu3krHY?autoplay=0&cc_load_policy=0',
     videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/sws2s63/vt/frame?titleShow=false'
   },
   {
@@ -61,7 +61,7 @@ const allProjects = [
     descFa:  '● استایل خاص</br>● دو یا تک زبانه</br>● ناوبری صفحه ای</br>● مدل متنی ساده</br>● امکان افزودن جزئیات بیشتر',
     menuUrl:  'https://digitalmenus.ir/Dream/',
     logoSrc:  'logo/Dream Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/vLtDetYh0os?autoplay=0&mute=1&cc_load_policy=0',
+    videoSrc: 'https://www.youtube.com/embed/vLtDetYh0os?autoplay=0&cc_load_policy=0',
     videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/fwab923/vt/frame?titleShow=false'
   },
   {
@@ -71,7 +71,7 @@ const allProjects = [
     descFa:  '● استایل خاص</br>● چند زبانه</br>● ناوبری سریع</br>● تم تیره و روشن</br>● متنی ساده یا عکس دار</br>● انتخاب تعاملی آیتم های داخل منو',
     menuUrl:  'https://digitalmenus.ir/Honey/',
     logoSrc:  'logo/Honey Logo.svg',
-    videoSrc: 'https://www.youtube.com/embed/GhiIZZyk1Vg?autoplay=0&mute=1&cc_load_policy=0',
+    videoSrc: 'https://www.youtube.com/embed/GhiIZZyk1Vg?autoplay=0&cc_load_policy=0',
     videoSrcAparat: 'https://www.aparat.com/video/video/embed/videohash/hif74u9/vt/frame?titleShow=false'
   }
 ];
@@ -330,11 +330,12 @@ function buildProjectCard(proj, pIdx) {
   function pauseVideo(videoItem) {
     const iframe  = videoItem.querySelector('iframe');
     const playBtn = videoItem.querySelector('.video-play-btn');
+    const native  = iframe && iframe.dataset.native === 'true'; // Aparat card: no overlay, iframe stays clickable
     if (iframe) {
-      iframe.style.pointerEvents = 'none';
+      if (!native) iframe.style.pointerEvents = 'none';
       iframe.src = iframe.dataset.baseSrc; // reload without autoplay = stops playback
     }
-    if (playBtn) playBtn.style.display = 'flex';
+    if (playBtn && !native) playBtn.style.display = 'flex';
   }
 
   document.addEventListener('click', e => {
@@ -366,24 +367,26 @@ function buildProjectCard(proj, pIdx) {
   /* Aparat cards (see detectRegionAndSwapVideos above) have no overlay
      button to click, so the delegate above never fires for them — the
      visitor clicks straight into the iframe. We can't see clicks inside
-     a cross-origin iframe, but we CAN see focus move into it, which
-     happens the moment the visitor interacts with Aparat's own player.
-     Treat that as "this one started playing" so it still stops whatever
-     else was going. */
-  window.addEventListener('blur', () => {
-    setTimeout(() => {
-      const active = document.activeElement;
-      if (!active || active.tagName !== 'IFRAME' || active.dataset.native !== 'true') return;
+     a cross-origin iframe, but we CAN see which iframe holds focus:
+     it moves into the iframe the moment the visitor interacts with
+     Aparat's own player.
 
-      const videoItem = active.closest('.gallery-item');
-      if (!videoItem) return;
+     A one-off window 'blur' listener is NOT enough: the parent window
+     only blurs the first time focus enters any iframe, so it never
+     fires again when focus jumps from one Aparat iframe to another.
+     Instead we watch document.activeElement on a light interval —
+     whenever it becomes a different Aparat iframe than the one we
+     think is playing, that one is stopped and the new one takes over. */
+  setInterval(() => {
+    const active = document.activeElement;
+    if (!active || active.tagName !== 'IFRAME' || active.dataset.native !== 'true') return;
 
-      if (currentlyPlaying && currentlyPlaying !== videoItem) {
-        pauseVideo(currentlyPlaying);
-      }
-      currentlyPlaying = videoItem;
-    }, 0);
-  });
+    const videoItem = active.closest('.gallery-item');
+    if (!videoItem || videoItem === currentlyPlaying) return;
+
+    if (currentlyPlaying) pauseVideo(currentlyPlaying);
+    currentlyPlaying = videoItem;
+  }, 150);
 })();
 
 (function initReveal() {
