@@ -22,11 +22,6 @@
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --header-h: 70px;
 
-  /* NOTE: --hero-ratio was used to size the hero banner photo.
-     The hero photo has been removed entirely (see .hero-banner
-     below) — only the decorative diagonal skew strip remains, so
-     this token is no longer needed. */
-
   --hero-ratio: 16/1;
   --skew: 5rem;
 }
@@ -128,15 +123,6 @@ html[lang="fa"] .lang-en { display: none !important; }
   margin-bottom: calc(-2 * var(--skew));
 }
 
-/* --------------------------------------------------------------
-   HERO — the photo has been removed entirely (client no longer
-   wants a hero image). .hero-banner is now ONLY the decorative
-   dark diagonal strip: its height comes purely from padding-bottom
-   (equal to --skew), and .hero-section's clip-path above cuts it
-   into the angled shape. Nothing else needed — do not add a fixed
-   height or background-image back here unless a hero photo is
-   reintroduced on purpose.
-------------------------------------------------------------- */
 .hero-banner {
   position: relative;
   width: 100%;
@@ -231,17 +217,8 @@ html[lang="fa"] .lang-en { display: none !important; }
 .gallery-video-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
 .gallery-video-wrap iframe { width: 100%; height: 100%; border: none; pointer-events: none; background: #000; }
 
-/* Aparat cards: no custom overlay — the visitor uses Aparat's own
-   play button directly (see detectRegionAndSwapVideos() in app.js). */
 .gallery-item.video-native .video-play-btn { display: none; }
 
-/* Aparat's player pins the video to the top of its frame. Instead of
-   filling the whole 4:3 box, give the iframe the video's own ratio and
-   center it vertically, so any leftover space splits evenly above and
-   below (like YouTube's letterbox).
-   --aparat-ratio : the video's real aspect ratio (16/9 for landscape).
-   --aparat-zoom  : 1 = no crop; try 1.15–1.3 to zoom in and crop the
-                    bars away entirely (still centered). */
 .gallery-item.video-native .gallery-video-wrap { --aparat-ratio: 16/9; --aparat-zoom: 1; }
 .gallery-item.video-native .gallery-video-wrap iframe {
   position: absolute;
